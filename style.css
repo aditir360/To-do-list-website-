@@ -1,45 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #0095b6;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
-.container {
-    background: #fff;
+.todo-container {
+    background-color: #ace5ee;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
-input {
-    width: calc(100% - 22px);
+input[type="text"], select {
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 button {
     padding: 10px 20px;
-    border: none;
-    background: #5cb85c;
+    background-color: #28a745;
     color: #fff;
-    border-radius: 3px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #4cae4c;
+    background-color: #218838;
 }
 
 ul {
@@ -48,24 +40,39 @@ ul {
 }
 
 li {
-    background: #f9f9f9;
     padding: 10px;
-    margin: 5px 0;
-    border-radius: 3px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 10px;
+    border-radius: 4px;
 }
 
-li.completed {
-    text-decoration: line-through;
-    color: #999;
+.low {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
 }
 
-li button {
-    background: #d9534f;
+.medium {
+    background-color: #ffeeba;
+    border-left: 5px solid #ffc107;
 }
 
-li button:hover {
-    background: #c9302c;
+.high {
+    background-color: #f8d7da;
+    border-left: 5px solid #dc3545;
+}
+
+/* Add styles for task categories */
+.work {
+    border-top: 5px solid #007bff;
+}
+
+.personal {
+    border-top: 5px solid #ffc107;
+}
+
+.school {
+    border-top: 5px solid #28a745;
+}
+
+.other {
+    border-top: 5px solid #6c757d;
 }
