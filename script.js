@@ -1,31 +1,25 @@
-document.getElementById('add-button').addEventListener('click', addTask);
-document.getElementById('todo-input').addEventListener('keyup', function(e) {
-    if (e.key === 'Enter') {
+function addTask() {
+    let taskInput = document.getElementById("taskInput").value;
+    let priorityInput = document.getElementById("priorityInput").value;
+    let categoryInput = document.getElementById("categoryInput").value;
+
+    if (taskInput === "") {
+        alert("Please enter a task.");
+        return;
+    }
+
+    let li = document.createElement("li");
+    li.textContent = taskInput;
+    li.classList.add(priorityInput, categoryInput);
+
+    let taskList = document.getElementById("taskList");
+    taskList.appendChild(li);
+
+    document.getElementById("taskInput").value = "";
+}
+
+document.getElementById("taskInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
         addTask();
     }
 });
-
-// function so that the website can add and remove to-do tasks
-function addTask() {
-    const input = document.getElementById('todo-input');
-    const taskText = input.value.trim();
-    if (taskText) {
-        const listItem = document.createElement('li');
-        listItem.textContent = taskText;
-
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.addEventListener('click', function() {
-            listItem.remove();
-        });
-
-        listItem.addEventListener('click', function() {
-            listItem.classList.toggle('completed');
-        });
-
-        listItem.appendChild(deleteButton);
-        document.getElementById('todo-list').appendChild(listItem);
-        input.value = '';
-        input.focus();
-    }
-}
